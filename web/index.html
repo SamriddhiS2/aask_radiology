@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AASK</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+
+    <div id="home-page" class="page active">
+        <div class="header-ribbon">
+            <div class="nav-links">
+                <button class="nav-btn" data-page="info-page"><img src="img/info_icon.png" alt="Info icon"> INFO</button>
+                <button class="nav-btn" data-page="credits-page"><img src="img/credits_icon.png" alt="Credits icon"> CREDITS</button>
+                <button class="nav-btn" data-page="vision-page"><img src="img/vision_icon.png" alt="Vision icon"> VISION</button>
+            </div>
+            <div class="header-logos">
+                <img src="img/uwmedicine_logo.png" alt="UW Medicine Radiology">
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="welcome-overlay">
+                <h2>WELCOME TO</h2>
+                <h1>AASK</h1>
+                <button id="enter-app-btn" class="enter-btn">ENTER</button>
+            </div>
+        </div>
+
+        <div class="footer-ribbon">
+            <div class="footer-logos">
+                <img src="img/uw_logo.png" alt="University of Washington">
+            </div>
+        </div>
+    </div>
+
+    <div id="app-page" class="page">
+        <button class="back-btn" data-page="home-page">← Back to Home</button>
+        <div class="app-container">
+            <h1>AASK Automation Tool</h1>
+            <div class="step-card">
+                <h2>1. Type in your UW Net ID</h2>
+                <div class="uw-net-id">
+                    <input type="text" id="uw-net-id-input" placeholder="Please type in your UW Net ID">
+                </div>
+            </div>
+            <div class="step-card">
+                <h2>2. Select Folder</h2>
+                <div class="folder-selection">
+                    <input type="text" id="source-folder-input" placeholder="Select the source DICOM folder..." readonly>
+                    <button id="browse-btn">Browse...</button>
+                </div>
+            </div>
+            <div class="step-card">
+                <h2>3. Select Series</h2>
+                <div id="series-checkbox-container" class="series-container">
+                    </div>
+            </div>
+            <div class="step-card">
+                <h2>4. Run Automation</h2>
+                <button id="run-automation-btn">▶ Run Automation</button>
+            </div>
+            <div class="progress-section">
+                <h2>Progress</h2>
+                <label id="parse-progress-label">Parsing Series Progress</label>
+                <progress id="parse-progress" value="0" max="100"></progress>
+                <label id="clean-progress-label">Cleaning Previous UW Net ID Folder Progress</label>
+                <progress id="clean-progress" value="0" max="100"></progress>
+                <label id="upload-progress-label">Uploading to OSCAR Progress</label>
+                <progress id="upload-progress" value="0" max="100"></progress>
+                <p id="status-message">Status: Ready</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="info-page" class="page content-page">
+        <button class="back-btn" data-page="home-page">← Back to Home</button>
+        <img src="img/info_page.png" alt="Info">
+    </div>
+    <div id="credits-page" class="page content-page">
+        <button class="back-btn" data-page="home-page">← Back to Home</button>
+        <img src="img/credits_page.png" alt="Credits">
+    </div>
+    <div id="vision-page" class="page vision">
+        <button class="back-btn" data-page="home-page">← Back to Home</button>
+        <div class="vision-content">
+            <img src="img/vision_icon.png" alt="Vision Icon" class="vision-icon">
+            <h1>Our Vision</h1>
+            <p>To streamline medical imaging analysis by seamlessly integrating artificial intelligence into radiologist workflows, enhancing diagnostic efficiency and enabling opportunistic screening for better patient outcomes.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
